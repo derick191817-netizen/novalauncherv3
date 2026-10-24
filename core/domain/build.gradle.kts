@@ -15,8 +15,7 @@ dependencies {
     api(project(":core:common"))
     implementation("javax.inject:javax.inject:1")
     
-    // Usa a versão gerenciada pelo BOM do Compose (sem forçar versão manual)
-    api("androidx.compose.runtime:runtime-annotation")
+    // A linha problemática que quebrava o build foi removida daqui.
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
