@@ -15,9 +15,8 @@ dependencies {
     api(project(":core:common"))
     implementation("javax.inject:javax.inject:1")
     
-    // Correção: removida a versão fixa 1.7.3 que estava quebrando o build. 
-    // O Gradle agora usa a versão correta gerenciada pelo BOM do Compose.
-    api("androidx.compose.runtime:runtime-annotation")
+    // Usa a versão gerenciada pelo catálogo (BOM do Compose)
+    api(libs.compose.runtime.annotation)
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
