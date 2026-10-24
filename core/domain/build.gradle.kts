@@ -15,7 +15,8 @@ dependencies {
     api(project(":core:common"))
     implementation("javax.inject:javax.inject:1")
     
-    // A linha problemática que quebrava o build foi removida daqui.
+    // Correção: Fornece @Immutable e @Stable gerenciados pelo BOM do Compose
+    api("androidx.compose.runtime:runtime")
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
