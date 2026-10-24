@@ -27,7 +27,7 @@ jobs:
         run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
 
       - name: Compilar APK debug
-        run: gradle :app:assembleDebug --stacktrace --warning-mode all > build_log.txt 2>&1 || cat build_log.txt
+        run: gradle :app:assembleDebug --stacktrace
 
       - name: Guardar APK
         if: always()
