@@ -27,7 +27,7 @@ jobs:
         run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
 
       - name: Compilar APK debug
-        run: gradle :app:assembleDebug --stacktrace || (cat build_log.txt; exit 1)
+        run: gradle :app:assembleDebug --stacktrace > log.txt 2>&1 || (echo "::error::ERRO DE COMPILAÇÃO ENCONTRADO:"; cat log.txt; exit 1)
 
       - name: Guardar APK
         if: always()
