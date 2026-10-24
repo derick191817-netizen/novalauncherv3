@@ -15,8 +15,8 @@ dependencies {
     api(project(":core:common"))
     implementation("javax.inject:javax.inject:1")
     
-    // Correção: Fornece @Immutable e @Stable gerenciados pelo BOM do Compose
-    api("androidx.compose.runtime:runtime")
+    // Versão exata, sem depender de BOM. Isso resolve o erro de "Could not find".
+    api("androidx.compose.runtime:runtime:1.7.0")
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
