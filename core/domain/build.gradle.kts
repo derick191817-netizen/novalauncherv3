@@ -15,9 +15,10 @@ dependencies {
     api(project(":core:common"))
     implementation("javax.inject:javax.inject:1")
     
-    // Versão exata, sem depender de BOM. Isso resolve o erro de "Could not find".
-    api("androidx.compose.runtime:runtime:1.7.0")
-
+    // Força a biblioteca do Compose (o BOM) e remove a verificação que estava quebrando
+    implementation(platform("androidx.compose:compose-bom:2024.09.03"))
+    api("androidx.compose.runtime:runtime")
+    
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
 }
