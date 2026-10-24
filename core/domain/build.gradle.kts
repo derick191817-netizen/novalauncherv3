@@ -15,8 +15,8 @@ dependencies {
     api(project(":core:common"))
     implementation("javax.inject:javax.inject:1")
     
-    // Usa a versão gerenciada pelo catálogo (BOM do Compose)
-    api(libs.compose.runtime.annotation)
+    // Versão explícita e estável que existe no repositório do Google
+    api("androidx.compose.runtime:runtime-annotation:1.7.2")
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
